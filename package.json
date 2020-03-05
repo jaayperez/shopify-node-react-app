@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/jaayperez/shopify-app-node-react/issues"
   },
-  "homepage": "https://github.com/jaayperez/shopify-app-node-react#readme"
+  "homepage": "https://github.com/jaayperez/shopify-app-node-react#readme",
+  "dependencies": {
+    "next": "^9.2.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  }
 }
