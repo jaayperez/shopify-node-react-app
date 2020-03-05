@@ -1,0 +1,1 @@
+{"version":3,"file":"oauth-query-string.d.ts","sourceRoot":"","sources":["../../../src/auth/oauth-query-string.ts"],"names":[],"mappings":"AAEA,OAAO,EAAC,OAAO,EAAC,MAAM,KAAK,CAAC;AAG5B,OAAO,EAAC,iBAAiB,EAAC,MAAM,UAAU,CAAC;AAM3C,MAAM,CAAC,OAAO,UAAU,gBAAgB,CACtC,GAAG,EAAE,OAAO,EACZ,OAAO,EAAE,iBAAiB,EAC1B,YAAY,EAAE,MAAM,UAsBrB"}
