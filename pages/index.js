@@ -2,7 +2,9 @@ import { TextStyle } from '@shopify/polaris';
 
 const Index = () => (
   <div>
-    <p>Shopify App with Node.js, React, and GraphQL</p>
+    <TextStyle variation="positive">
+      Shopify App with Node.js, React, and GraphQL
+    </TextStyle>
   </div>
 );
 
