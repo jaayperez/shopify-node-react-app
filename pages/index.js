@@ -1,5 +1,5 @@
 import { EmptyState, Layout, Page } from '@shopify/polaris';
-import { TitleBar } from '@shopify/app-bridge-react';
+import { ResourcePicker, TitleBar } from '@shopify/app-bridge-react';
 
 const img = 'https://cdn.shopify.com/s/files/1/0757/9955/files/empty-state.svg';
 
@@ -13,12 +13,19 @@ class Index extends React.Component {
             content: 'Select products',
           }}
         />
+        <ResourcePicker
+          resourceType="Product"
+          showVariants={false}
+          open={this.state.open}
+          onSelection={(resources) => this.handleSelection(resources)}
+          onCancel={() => this.setState({ open: false })}
+        />
         <Layout>
           <EmptyState
             heading="Discount your products temporarily"
             action={{
               content: 'Select products',
-              onAction: () => console.log('clicked'),
+              onAction: () => this.setState({ open: true }),
             }}
             image={img}
           >
@@ -28,6 +35,10 @@ class Index extends React.Component {
       </Page>
     );
   }
+  handleSelection = (resources) => {
+    this.setState({ open: false })
+    console.log(resources)
+  };
 }
 
 export default Index;
