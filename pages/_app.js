@@ -10,7 +10,7 @@ class MyApp extends App {
     return (
       <React.Fragment>
         <Head>
-          <title>Sample App</title>
+          <title>Shopify App</title>
           <meta charSet="utf-8" />
         </Head>
         <AppProvider i18n={translations}>
