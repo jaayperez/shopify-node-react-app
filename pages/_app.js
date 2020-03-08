@@ -15,7 +15,7 @@ class MyApp extends App {
         </Head>
         <AppProvider i18n={translations}>
           <Component {...pageProps} />
-        <AppProvider>
+        </AppProvider>
       </React.Fragment>
     );
   }
