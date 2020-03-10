@@ -5,6 +5,14 @@ import { Provider } from '@shopify/app-bridge-react';
 import '@shopify/polaris/styles.css';
 import translations from '@shopify/polaris/locales/en.json';
 import Cookies from 'js-cookie';
+import ApolloClient from 'apollo-boost';
+
+const client = new ApolloClient({
+  fetchOptions: {
+    credentials: 'include'
+  },
+});
+
 
 class MyApp extends App {
   render() {
