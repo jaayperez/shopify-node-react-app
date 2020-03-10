@@ -1,3 +1,6 @@
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
+
 const GET_PRODUCTS_BY_ID = gql`
   query getProducts($ids: [ID!]!) {
     nodes(ids: $ids) {
