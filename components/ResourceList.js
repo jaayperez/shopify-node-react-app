@@ -1,6 +1,12 @@
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
-import { Card } from '@shopify/polaris';
+import {
+  Card,
+  ResourceList,
+  Stack,
+  TextStyle,
+  Thumbnail,
+} from '@shopify/polaris';
 import store from 'store-js';
 
 const GET_PRODUCTS_BY_ID = gql`
