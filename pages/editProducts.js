@@ -82,6 +82,9 @@ class EditProduct extends React.Component {
                               id: variantId,
                               price: discount,
                             };
+                            handleSubmit({
+                              variables: { input: productVariableInput },
+                            });
                           }
                         }
                       ]}
