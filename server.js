@@ -41,6 +41,19 @@ app.prepare().then(() => {
           secure: true,
           sameSite: 'none'
         });
+        const registration = await registerWebhook({
+          address: `${HOST}/webhooks/products/create`,
+          topic: 'PRODUCTS_CREATE',
+          accessToken,
+          shop,
+          apiVersion: ApiVersion.October19
+        });
+
+        if (registration.success) {
+          console.log('Successfully registered webhook!');
+        } else {
+          console.log('Failed to register webhook', registration.result);
+        }
         await getSubscriptionUrl(ctx, accessToken, shop);
       },
     }),
