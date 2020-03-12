@@ -78,7 +78,10 @@ class EditProduct extends React.Component {
                         {
                           content: 'Save',
                           onAction: () => {
-                            console.log('submitted');
+                            const productVariableInput = {
+                              id: variantId,
+                              price: discount,
+                            };
                           }
                         }
                       ]}
