@@ -12,13 +12,17 @@ const Router = require('koa-router');
 const {receiveWebhook, registerWebhook} = require('@shopify/koa-shopify-webhooks');
 const { ApiVersion } = require('@shopify/koa-shopify-graphql-proxy');
   const getSubscriptionUrl = require('./server/getSubscriptionUrl');
-  
+
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-const { SHOPIFY_API_SECRET_KEY, SHOPIFY_API_KEY } = process.env;
+const {
+  SHOPIFY_API_SECRET_KEY,
+  SHOPIFY_API_KEY,
+  HOST,
+ } = process.env;
 
 app.prepare().then(() => {
   const server = new Koa();
