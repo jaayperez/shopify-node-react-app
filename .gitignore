@@ -1,3 +1,8 @@
+# dotenv environment variables file
 .env
+
+# Ignore Apple macOS Desktop Services Store
 .DS_Stores
+
+# Dependency directories
 node_modules/
