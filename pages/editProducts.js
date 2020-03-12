@@ -1,4 +1,5 @@
 import {
+  Banner,
   Card,
   DisplayText,
   Form,
@@ -6,7 +7,8 @@ import {
   Layout,
   Page,
   PageActions,
-  TextField
+  TextField,
+  Toast
 } from '@shopify/polaris';
 import store from 'store-js';
 import gql from 'graphql-tag';
@@ -30,7 +32,8 @@ class EditProduct extends React.Component {
   state = {
     discount: '',
     price: '',
-    variantId: ''
+    variantId: '',
+    showToast: false
   };
 
   componentDidMount() {
@@ -44,9 +47,22 @@ class EditProduct extends React.Component {
         mutation={UPDATE_PRICE}
       >
         {(handleSubmit, {error, data}) => {
+          const showError = error && (
+            <Banner status="critical">{error.message}</Banner>
+          );
+          const showToast = data && data.productVariantUpdate && (
+            <Toast
+              content="Sucessfully updated"
+              onDismiss={() => this.setState({ showToast: false })}
+            />
+          );
           return (
             <Page>
               <Layout>
+                {showToast}
+                <Layout.Section>
+                  {showError}
+                </Layout.Section>
                 <Layout.Section>
                   <DisplayText size="large">{name}</DisplayText>
                   <Form>
