@@ -64,15 +64,16 @@ app.prepare().then(() => {
   router.post('/webhooks/products/create', webhook, (ctx) => {
     console.log('received webhook: ', ctx.state.webhook);
   });
-  
+
   server.use(graphQLProxy({version: ApiVersion.October19}))
-  server.use(verifyRequest());
-  server.use(async (ctx) => {
-    await handle(ctx.req, ctx.res);
-    ctx.respond = false;
-    ctx.res.statusCode = 200;
-    return
+
+  router.get('*', verifyRequest(), async (ctx) => {
+   await handle(ctx.req, ctx.res);
+   ctx.respond = false;
+   ctx.res.statusCode = 200;
   });
+  server.use(router.allowedMethods());
+  server.use(router.routes());
 
   server.listen(port, () => {
     console.log(`> Ready on http://localhost:${port}`);
