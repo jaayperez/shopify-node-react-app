@@ -59,6 +59,12 @@ app.prepare().then(() => {
     }),
   );
 
+  const webhook = receiveWebhook({secret: SHOPIFY_API_SECRET_KEY});
+
+  router.post('/webhooks/products/create', webhook, (ctx) => {
+    console.log('received webhook: ', ctx.state.webhook);
+  });
+  
   server.use(graphQLProxy({version: ApiVersion.October19}))
   server.use(verifyRequest());
   server.use(async (ctx) => {
