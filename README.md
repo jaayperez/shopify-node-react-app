@@ -1,6 +1,6 @@
 # Shopify App with Node.js and React
 
-This is a functional Shopify App leveraging several frameworks, tools, and libraries that runs in the local development environment with the ability to read and write data. The App can also charge fees using the Billing API with webhooks, which will listen for relevant events that happen on the development store.
+This Shopify App creates discounts, reads product data, writes new price changes when discounts are applied and charges merchant fees with Shopify's Billing API. The functional app runs in the development environment and enables several frameworks, tools, and libraries with webhooks, which listens for relevant events that happen on the development store.
 
 ## Technologies
 **Built with**
