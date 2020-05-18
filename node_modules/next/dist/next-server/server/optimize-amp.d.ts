@@ -1,1 +1,1 @@
-export default function optimize(html: string): Promise<string>;
+export default function optimize(html: string, config: any): Promise<string>;

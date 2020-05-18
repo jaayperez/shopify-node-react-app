@@ -1,6 +1,6 @@
-import webpack from 'webpack';
+import { Configuration } from 'webpack';
 export declare type CompilerResult = {
-    errors: Error[];
-    warnings: Error[];
+    errors: string[];
+    warnings: string[];
 };
-export declare function runCompiler(config: webpack.Configuration | webpack.Configuration[]): Promise<CompilerResult>;
+export declare function runCompiler(config: Configuration | Configuration[]): Promise<CompilerResult>;
