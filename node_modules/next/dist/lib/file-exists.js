@@ -1,1 +1,0 @@
-"use strict";exports.__esModule=true;exports.fileExists=fileExists;var _fs=require("fs");async function fileExists(fileName){try{await _fs.promises.access(fileName,_fs.constants.F_OK);return true;}catch(err){if(err.code==='ENOENT'){return false;}throw err;}}
